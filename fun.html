@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Friend Quiz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;700&display=swap');
+        
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 500px;
+        }
+        
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .options button {
+            background: white;
+            color: black;
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .options button:hover {
+            transform: scale(1.05);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .aesthetic {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .aesthetic img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="quiz">
+        <h1>HII KOHLIPAGLU</h1>
+        <div class="question">What would you do if I finger you? 🍟</div>
+        <div class="options">
+            <button onclick="nextSlide()">Enjoy it</button>
+            <button onclick="nextSlide()">Finger me back😭</button>
+            <button onclick="nextSlide()">Scissoring✂️</button>
+        </div>
+    </div>
+    
+    <div class="container hidden" id="aesthetic">
+        <div class="aesthetic">FUCK YOU BABYGURL</div>
+        <img src="cutie.jpg" alt="Aesthetic Image">
+    </div>
+    
+    <script>
+        function nextSlide() {
+            document.getElementById('quiz').classList.add('hidden');
+            let aestheticDiv = document.getElementById('aesthetic');
+            aestheticDiv.classList.remove('hidden');
+            setTimeout(() => {
+                aestheticDiv.querySelector('.aesthetic').style.opacity = 1;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
